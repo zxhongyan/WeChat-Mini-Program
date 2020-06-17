@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="layer1">
+    <view class="ring ring1" bindtap="chat1"><image src="./img/img1.jpg"></image><view class="description">聊天室</view></view>
+    <view class="ring ring2" bindtap="chat2"><image src="./img/img2.jpg"></image><view class="description">人工智能</view></view>
+    <view class="ring ring3" bindtap="chat3"><image src="./img/img3.jpg"></image><view class="description">人工智能</view></view>
+  </view>
+  <view class="layer2">
+    <view class="ring ring4" bindtap="chat4"><image src="./img/img4.jpg"></image><view class="description">人工智能</view></view>
+    <view class="ring ring5" bindtap="chat5"><image src="./img/img5.jpg"></image><view class="description">人工智能</view></view>
+    </view>
+</view>

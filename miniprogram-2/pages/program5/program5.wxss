@@ -1,0 +1,80 @@
+/* pages/program5/program5.wxss */
+page {
+  background-color: #f1f1f1;
+}
+/* 底部样式 */
+.inputRoom {
+  width: 100vw;
+  height: 16vw;
+  border-top: 1px solid #cdcdcd;
+  background-color: #f1f1f1;
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  z-index: 20;
+}
+input {
+  width: 76vw;
+  height: 9.33vw;
+  background-color: #fff;
+  border-radius: 40rpx;
+  margin-left: 2vw;
+  padding: 0 3vw;
+  font-size: 28rpx;
+  color: #444;
+}
+button.send{
+  background-color: #96EB6A;
+  border-radius: 5px;
+  color: #fff;
+
+}
+.leftMsg {
+  font-size: 35rpx;
+  color: #444;
+  line-height: 7vw;
+  padding: 2vw 2.5vw;
+  background-color: #fff;
+  margin-left: -1.6vw;
+  border-radius: 10rpx;
+  z-index: 10;
+}
+
+.rightMsg {
+  font-size: 35rpx;
+  color: #444;
+  line-height: 7vw;
+  padding: 2vw 2.5vw;
+  background-color: #96EB6A;
+  margin-right: -1.6vw;
+  border-radius: 10rpx;
+  z-index: 10;
+  /* 自动换行 */
+  word-break: break-all;
+}
+.mymsg{
+  position: relative;
+}
+/* 右边的三角形 */
+.righttriangle{
+  height: 0;
+  width: 0;
+  border: 25rpx solid transparent;
+  margin-left: 5px;
+  border-left-color: #96EB6A;
+  top: 15rpx;
+  right: 0rpx;
+  position: relative;
+}
+/* 左边的三角形 */
+.lefttriangle{
+  height: 0;
+  width: 0;
+  border: 25rpx solid transparent;
+  margin-right: 5px;
+  border-right-color: #fff;
+  top: 15rpx;
+  right: 0rpx;
+  position: relative;
+}

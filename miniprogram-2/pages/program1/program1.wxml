@@ -1,0 +1,45 @@
+<view>
+
+  <scroll-view scroll-y scroll-into-view='{{toView}}' style='height: {{scrollHeight}};'>
+    <!-- <view class='scrollMsg'> -->
+    <block wx:key wx:for='{{msgList}}' wx:for-index="index">
+
+      <!-- 单个消息1 程序发出（左） -->
+      <view wx:if='{{item.speaker=="server"}}' id='msg-{{index}}' style='display: flex; padding: 2vw 11vw 2vw 2vw;'>
+        <view style='width: 11vw; height: 11vw;'>
+          <image style='width: 11vw; height: 11vw; border-radius: 10rpx;' src='http://img5.imgtn.bdimg.com/it/u=2482891506,3188782599&fm=26&gp=0.jpg'></image>
+        </view>
+        <view class="lefttriangle" style='z-index: 9;'></view>
+        <view class='leftMsg'>{{item.content}}</view>
+      </view>
+
+      <!-- 单个消息2 用户发出（右） -->
+      <view wx:if='{{item.speaker=="customer" && item.contentType=="text" &&  item.content != \'\'}}' class="mymsg" id='msg-{{index}}' style='display: flex; justify-content: flex-end; padding: 2vw 2vw 2vw 11vw;'>
+        <view class='rightMsg'>{{item.content}}</view>
+        <view class="righttriangle" style='z-index: 9;'></view>
+        <view style='width: 11vw; height: 11vw;'>
+          <image style='width: 11vw; height: 11vw; border-radius: 10rpx;' src='{{cusHeadIcon}}'></image>
+        </view>
+      </view>
+      <!-- 发图片 -->
+      <view wx:if='{{item.contentType=="image"}}' class="mymsg" id='msg-{{index}}' style='display: flex; justify-content: flex-end; padding: 2vw 2vw 2vw 11vw;'>
+        <view class='rightMsg'><image style="width:400rpx;height:400rpx;" src="{{item.content}}"></image></view>
+        <view class="righttriangle" style='z-index: 9;'></view>
+        <view style='width: 11vw; height: 11vw;'>
+          <image style='width: 11vw; height: 11vw; border-radius: 10rpx;' src='{{cusHeadIcon}}'></image>
+        </view>
+      </view>
+
+    </block>
+    <!-- </view> -->
+
+    <!-- 发送框 -->
+    <view style='width: 100%; height: 18vw;'></view>
+  </scroll-view>
+
+  <view class='inputRoom' style='bottom: {{inputBottom}}'>
+    <image bindtap="sendimage" style='width: 10vw; margin-left: 3.2vw;' src='./imge/img.png' mode='widthFix' ></image>
+    <input bindconfirm='sendClick' bindinput="getInput" adjust-position='{{false}}' value='{{inputVal}}' confirm-type='send' bindfocus='focus' bindblur='blur' ></input>
+    <button bindtap="sendMsg" class="send" style="width:30vw" bindfocus='focus' bindblur='blur'>发送</button>
+  </view>
+</view>
